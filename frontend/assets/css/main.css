@@ -165,16 +165,19 @@ body {
 }
 
 /* Testimonios */
-.testimonials {
+.text-testimonial{
     text-align: center;
     padding: 40px;
     background: #e9ecef;
+}
+.testimonials {
+    display: flex;
 }
 
 .testimonial {
     background: white;
     padding: 20px;
-    margin: 10px auto;
+    margin: 70px;
     width: 50%;
     border-radius: 5px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);

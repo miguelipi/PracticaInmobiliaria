@@ -2,10 +2,10 @@ const mysql = require('mysql');
 
 // Configuración de la base de datos
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',    // Usuario por defecto de MySQL (si no cambiaste la configuración)
-    password: '',    // Contraseña (deja vacía si no tienes contraseña para el usuario root)
-    database: 'inmobiliaria'
+    host: 'sql8.freesqldatabase.com	',
+    user: 'sql8769686',    // Usuario por defecto de MySQL (si no cambiaste la configuración)
+    password: 'LzK4Stemxn',    // Contraseña (deja vacía si no tienes contraseña para el usuario root)
+    database: 'sql8769686'
 });
 
 // Conectar a la base de datos

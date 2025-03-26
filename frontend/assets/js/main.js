@@ -2,8 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const languageBtn = document.getElementById("language-btn");
     const menuToggle = document.getElementById("menu-toggle");
     const navLinks = document.querySelector(".nav-links");
-    const images = document.querySelectorAll(".carousel-images img");
-    let currentIndex = 0;
 
     // Cambio de idioma sin recargar la página
     languageBtn.addEventListener("click", function () {
@@ -23,16 +21,4 @@ document.addEventListener("DOMContentLoaded", function () {
             navLinks.classList.remove("active"); // Elimina la clase 'active' si la pantalla es mayor a 768px
         }
     });
-
-    // Carrusel de imágenes automático
-    function moveSlide() {
-        images[currentIndex].classList.remove("active");
-        currentIndex = (currentIndex + 1) % images.length;
-        images[currentIndex].classList.add("active");
-    }
-
-    if (images.length > 0) {
-        images[currentIndex].classList.add("active");
-        setInterval(moveSlide, 3000);
-    }
 });

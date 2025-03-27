@@ -10,19 +10,13 @@ body {
 .collage {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-<<<<<<< HEAD
-<<<<<<< HEAD
     grid-gap: 5px; /* Menos espacio entre imágenes */
     max-width: 1200px; /* Aumenta el ancho del collage */
     margin: 20px auto;
-=======
     grid-gap: 10px;
     padding: 20px 20px; 
->>>>>>> 4d761f8d2afa6bf732a88c7adea2f931c8643858
-=======
     grid-gap: 10px;
     padding: 20px 20px; 
->>>>>>> dc7f9282f846bdecee9fce4a2ae9dcb1951b42dc
   }
   
   .collage img {
@@ -30,18 +24,15 @@ body {
     height: auto;
     object-fit: cover; 
     border-radius: 10px;
-<<<<<<< HEAD
-<<<<<<< HEAD
     display: block;
     margin: 0 auto; /* Centra las imágenes horizontalmente */
   }
   
   /* Responsivo */
   @media (max-width: 768px) {
-=======
-=======
->>>>>>> dc7f9282f846bdecee9fce4a2ae9dcb1951b42dc
-    height: 100%;
+    body {
+      height: 100%;
+    }
   }
 
 
@@ -56,12 +47,7 @@ body {
   }
   
 @media (max-width: 768px) {
-<<<<<<< HEAD
->>>>>>> 4d761f8d2afa6bf732a88c7adea2f931c8643858
     .collage {
-=======
-  .collage {
->>>>>>> dc7f9282f846bdecee9fce4a2ae9dcb1951b42dc
       grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -235,7 +221,6 @@ body {
     text-align: center;
     padding: 20px;
     margin-top: 50px;
-<<<<<<< HEAD
   }
   
   .footer a {
@@ -245,13 +230,10 @@ body {
   
   .footer a:hover {
     color: #a68d5c;
-<<<<<<< HEAD
   }
   
   /* Botón flotante */
   .cta-float {
-=======
-=======
 }
 
 .footer a {
@@ -264,15 +246,12 @@ body {
 }
 .fa-phone{
   color: red;
->>>>>>> dc7f9282f846bdecee9fce4a2ae9dcb1951b42dc
 }
 .fa-phone{
     color: red;
 }
 /* Botón flotante */
 .cta-float {
-<<<<<<< HEAD
->>>>>>> 4d761f8d2afa6bf732a88c7adea2f931c8643858
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -293,7 +272,6 @@ body {
   /* Diseño responsive */
   @media (max-width: 768px) {
     .nav-links {
-=======
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -314,7 +292,6 @@ body {
 /* Diseño responsive */
 @media (max-width: 768px) {
   .nav-links {
->>>>>>> dc7f9282f846bdecee9fce4a2ae9dcb1951b42dc
       display: none;
       flex-direction: column;
       background: white;
@@ -381,4 +358,5 @@ body {
       background-color: #bfa06a;
       color: white;
   }
+}
 }

@@ -46,7 +46,7 @@ body {
 
 /* Header */
 .header {
-    background-color: #2c3e50;
+    background-color: #151e27;
     color: white;
     padding: 5px;
     display: flex; /* Alineación en fila */
@@ -64,7 +64,9 @@ body {
 .logo {
     height: 50px; /* Ajusta según el tamaño deseado */
 }
-
+#language-arrow {
+    color: #151e27;
+}
 
 .nav-links {
     list-style: none;
@@ -72,6 +74,33 @@ body {
     display: flex;
     justify-content: center;
     gap: 15px;
+}
+
+.nav-links select {
+    border: none;
+    border-radius: 4px;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.nav-links select:hover {
+    color: #bfa06a;
+}
+
+.nav-links select option {
+    color: black;
+    text-align: center;
+}
+
+.nav-links select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
 }
 
 .nav-links li {
@@ -83,11 +112,9 @@ body {
     text-decoration: none;
     font-weight: bold;
 }
-
 .nav-links a:hover {
     color: #bfa06a; /* acento elegante */
 }
-
 /* Menú hamburguesa */
 .menu-toggle {
     display: none;
@@ -98,34 +125,11 @@ body {
     color: white;
 }
 
-/* Botón de cambio de idioma */
-.language-switcher {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-}
-
-#language-btn {
-    background: #bfa06a; /* acento elegante */
-    color: white;
-    border: none;
-    padding: 2px 5px;
-    font-size: 14px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-#language-btn:hover {
-    background: #a68d5c; /* variante más oscura */
-}
-
 /* Hero */
 .hero {
     text-align: center;
     padding: 50px;
-    background-color: #34495e; /* fondo elegante */
+    background-color: #151e27;
     color: white;
 }
 
@@ -197,7 +201,7 @@ body {
 
 /* Footer */
 .footer {
-    background-color: #2c3e50;
+    background-color: #151e27;    
     color: white;
     text-align: center;
     padding: 20px;

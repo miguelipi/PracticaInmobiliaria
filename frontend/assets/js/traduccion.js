@@ -6,28 +6,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const languages = {
-        es: "Spanish", af: "Afrikaans", sq: "Albanian", am: "Amharic", ar: "Arabic", hy: "Armenian", az: "Azerbaijani",
-        eu: "Basque", be: "Belarusian", bn: "Bengali", bs: "Bosnian", bg: "Bulgarian", ca: "Catalan",
-        ceb: "Cebuano", ny: "Chichewa", zh: "Chinese", co: "Corsican", hr: "Croatian", cs: "Czech",
-        da: "Danish", nl: "Dutch", en: "English", eo: "Esperanto", et: "Estonian", tl: "Filipino",
-        fi: "Finnish", fr: "French", fy: "Frisian", gl: "Galician", ka: "Georgian", de: "German",
-        el: "Greek", gu: "Gujarati", ht: "Haitian Creole", ha: "Hausa", haw: "Hawaiian", he: "Hebrew",
-        hi: "Hindi", hmn: "Hmong", hu: "Hungarian", is: "Icelandic", ig: "Igbo", id: "Indonesian",
-        ga: "Irish", it: "Italian", ja: "Japanese", jw: "Javanese", kn: "Kannada", kk: "Kazakh",
-        km: "Khmer", ko: "Korean", ku: "Kurdish", ky: "Kyrgyz", lo: "Lao", la: "Latin",
-        lv: "Latvian", lt: "Lithuanian", lb: "Luxembourgish", mk: "Macedonian", mg: "Malagasy", ms: "Malay",
-        ml: "Malayalam", mt: "Maltese", mi: "Maori", mr: "Marathi", mn: "Mongolian",
-        ne: "Nepali", no: "Norwegian", or: "Odia", ps: "Pashto", fa: "Persian", pl: "Polish",
-        pt: "Portuguese", pa: "Punjabi", ro: "Romanian", ru: "Russian", sm: "Samoan", gd: "Scots Gaelic",
-        sr: "Serbian", st: "Sesotho", sn: "Shona", sd: "Sindhi", si: "Sinhala", sk: "Slovak",
-        sl: "Slovenian", so: "Somali", su: "Sundanese", sw: "Swahili", sv: "Swedish",
-        tg: "Tajik", ta: "Tamil", te: "Telugu", th: "Thai", tr: "Turkish", uk: "Ukrainian",
-        ur: "Urdu", ug: "Uyghur", uz: "Uzbek", vi: "Vietnamese", cy: "Welsh", xh: "Xhosa",
-        yi: "Yiddish", yo: "Yoruba", zu: "Zulu"
+        zh: "Chinese", en: "English", hi: "Hindi", ar: "Arabic", bn: "Bengali", 
+        pt: "Portuguese", ru: "Russian", ja: "Japanese", de: "German"
     };
 
     const languageSelect = document.createElement("select");
     languageSelect.id = "language-select";
+    
+    const defaultOption = document.createElement("option");
+    defaultOption.value = "original";
+    defaultOption.textContent = languages["es"] ? "Español" : "Español";
+    languageSelect.appendChild(defaultOption);
     
     Object.keys(languages).forEach(lang => {
         const option = document.createElement("option");
@@ -40,9 +29,16 @@ document.addEventListener("DOMContentLoaded", function () {
     languageSwitcher.appendChild(languageSelect);
     
     languageSelect.addEventListener("change", function () {
-        translatePage(this.value);
+        if (this.value === "original") {
+            restoreOriginalText();
+        } else {
+            translatePage(this.value);
+        }
     });
 });
+
+const translationCache = new Map();
+const originalTexts = new Map();
 
 function translatePage(targetLang) {
     const elements = document.querySelectorAll("body *:not(script):not(style):not(select):not(option)");
@@ -52,15 +48,31 @@ function translatePage(targetLang) {
             if (node.nodeType === 3 && node.textContent.trim() !== "") {
                 const originalText = node.textContent.trim();
                 
-                fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLang}&dt=t&q=${encodeURIComponent(originalText)}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data && data[0] && data[0][0]) {
-                            node.textContent = data[0][0][0];
-                        }
-                    })
-                    .catch(error => console.error("Error en la traducción:", error));
+                if (!originalTexts.has(node)) {
+                    originalTexts.set(node, originalText);
+                }
+
+                if (translationCache.has(originalText + targetLang)) {
+                    node.textContent = translationCache.get(originalText + targetLang);
+                } else {
+                    fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLang}&dt=t&q=${encodeURIComponent(originalText)}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data && data[0] && data[0][0]) {
+                                const translatedText = data[0][0][0];
+                                translationCache.set(originalText + targetLang, translatedText);
+                                node.textContent = translatedText;
+                            }
+                        })
+                        .catch(error => console.error("Error en la traducción:", error));
+                }
             }
         });
+    });
+}
+
+function restoreOriginalText() {
+    originalTexts.forEach((text, node) => {
+        node.textContent = text;
     });
 }

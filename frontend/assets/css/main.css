@@ -206,7 +206,9 @@ body {
 .footer a:hover {
     color: #a68d5c;
 }
-
+.fa-phone{
+    color: red;
+}
 /* Botón flotante */
 .cta-float {
     position: fixed;

@@ -121,3 +121,10 @@ function restoreOriginalText() {
         }
     });
 }
+
+const languageMenu = document.getElementById('language-menu');
+const languageArrow = document.querySelector('.language-arrow');
+
+languageMenu.addEventListener('click', function() {
+  languageMenu.classList.toggle('active');
+});

@@ -8,46 +8,31 @@ body {
 }
 /* Collage de imágenes */
 .collage {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 5px; /* Menos espacio entre imágenes */
-    max-width: 1200px; /* Aumenta el ancho del collage */
-    margin: 20px auto;
-    grid-gap: 10px;
-    padding: 20px 20px; 
-    grid-gap: 10px;
-    padding: 20px 20px; 
-  }
-  
-  .collage img {
-    width: 100%;
-    height: auto;
-    object-fit: cover; 
-    border-radius: 10px;
-    display: block;
-    margin: 0 auto; /* Centra las imágenes horizontalmente */
-  }
-  
-  /* Responsivo */
-  @media (max-width: 768px) {
-    body {
-      height: 100%;
-    }
-  }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  padding: 20px 20px; 
+}
 
-
+.collage img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; 
+  border-radius: 10px;
+  height: 100%;
+}
 
 
 
 /* Responsivo */
 @media (max-width: 1000px) {
-    .collage {
-      grid-template-columns: repeat(3, 1fr); /* Cambia a 3 columnas */
-    }
+  .collage {
+    grid-template-columns: repeat(3, 1fr); /* Cambia a 3 columnas */
   }
-  
+}
+
 @media (max-width: 768px) {
-    .collage {
+  .collage {
       grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -61,13 +46,13 @@ body {
 
 /* Header */
 .header {
-    background-color: #151e27;
-    color: white;
-    padding: 5px;
-    display: flex; /* Alineación en fila */
-    justify-content: space-between; /* Distribución del título y menú */
-    align-items: center; /* Alineación vertical */
-    position: relative;
+  background-color: #151e27;
+  color: white;
+  padding: 5px;
+  display: flex; /* Alineación en fila */
+  justify-content: space-between; /* Distribución del título y menú */
+  align-items: center; /* Alineación vertical */
+  position: relative;
 }
 
 .title-container {
@@ -79,9 +64,18 @@ body {
 .logo {
   height: 50px; /* Ajusta según el tamaño deseado */
 }
-#language-arrow {
-    color: #151e27;
+
+.language-arrow {
+  color: white;
+  font-size: 14px;
+  transition: transform 0.3s ease;
 }
+
+/* Hace que la flecha rote cuando el menú está activo */
+.language-menu.active .language-arrow {
+  transform: rotate(180deg);
+}
+
 
 .nav-links {
   list-style: none;
@@ -89,37 +83,39 @@ body {
   display: flex;
   justify-content: center;
   gap: 15px;
+  display: flex;
 }
 
 .nav-links select {
-    border: none;
-    border-radius: 4px;
-    background: none;
-    font-size: 16px;
-    cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
 }
 
 .nav-links select:hover {
-    color: #bfa06a;
+  color: #bfa06a;
 }
 
 .nav-links select option {
-    color: black;
-    text-align: center;
+  color: black;
+  text-align: center;
 }
 
 .nav-links select:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
 }
 
 .nav-links li {
-  display: inline;
+  display: inlin;
+  list-style: none;
 }
 
 .nav-links a {
@@ -142,10 +138,10 @@ body {
 
 /* Hero */
 .hero {
-    text-align: center;
-    padding: 50px;
-    background-color: #151e27;
-    color: white;
+  text-align: center;
+  padding: 50px;
+  background-color: #151e27;
+  color: white;
 }
 
 .hero .btn {
@@ -216,24 +212,11 @@ body {
 
 /* Footer */
 .footer {
-    background-color: #151e27;    
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;
-  }
-  
-  .footer a {
-    color: #bfa06a;
-    text-decoration: none;
-  }
-  
-  .footer a:hover {
-    color: #a68d5c;
-  }
-  
-  /* Botón flotante */
-  .cta-float {
+  background-color: #151e27;    
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
 }
 
 .footer a {
@@ -247,31 +230,8 @@ body {
 .fa-phone{
   color: red;
 }
-.fa-phone{
-    color: red;
-}
 /* Botón flotante */
 .cta-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #bfa06a;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease;
-  }
-  
-  .cta-float:hover {
-    background-color: #a68d5c;
-  }
-  
-  /* Diseño responsive */
-  @media (max-width: 768px) {
-    .nav-links {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -287,6 +247,10 @@ body {
 
 .cta-float:hover {
   background-color: #a68d5c;
+}
+
+.nav-links.show {
+  display: flex;
 }
 
 /* Diseño responsive */
@@ -335,28 +299,27 @@ body {
   }
 
   .nav-links {
-      display: none;
-      flex-direction: column;
-      background: white;
-      width: 100%;
-      text-align: center;
-      padding: 10px 0;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
-
+  
   .nav-links.active {
-      display: flex;
+    display: flex;
   }
 
-  .nav-links a {
-      color: #2c3e50;
-      padding: 10px;
-      display: block;
+  .nav-links select {
+    color: #2c3e50;
   }
 
-  .nav-links a:hover {
-      background-color: #bfa06a;
-      color: white;
+  .nav-links select:hover {
+    color: white;
   }
-}
 }

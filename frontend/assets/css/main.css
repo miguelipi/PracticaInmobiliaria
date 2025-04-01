@@ -57,6 +57,7 @@ body {
     align-items: center; /* Alineación vertical */
     position: fixed;
     width: 100%;
+    z-index: 1;
 }
 
 .title-container {

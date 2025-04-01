@@ -37,12 +37,14 @@ body {
 @media (max-width: 768px) {
   .collage {
       grid-template-columns: repeat(2, 1fr);
+      padding-top: 140px;
   }
 }
 
 @media (max-width: 480px) {
   .collage {
       grid-template-columns: 1fr;
+      
   }
 }
 

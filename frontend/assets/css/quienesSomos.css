@@ -28,7 +28,8 @@ html, body {
     display: flex; /* Alineación en fila */
     justify-content: space-between; /* Distribución del título y menú */
     align-items: center; /* Alineación vertical */
-    position: relative;
+    position: fixed;
+    width: 100%;
 }
 
 .title-container {

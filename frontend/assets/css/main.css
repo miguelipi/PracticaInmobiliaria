@@ -25,8 +25,6 @@ body {
     height: 100%;
   }
 
-
-
 /* Responsivo */
 @media (max-width: 1000px) {
     .collage {
@@ -225,9 +223,11 @@ body {
 .fa-phone{
   color: red;
 }
-.fa-phone{
-    color: red;
+
+.fa{
+  color: #00a6ed;
 }
+
 /* Botón flotante */
 .cta-float {
   position: fixed;

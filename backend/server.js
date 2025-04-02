@@ -1,42 +1,39 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
+const oracledb = require('oracledb');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, '../frontend')));
+app.use(cors());
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../index.html'));
+app.get("/:page", (req, res) => {
+    res.sendFile(path.join(__dirname, `../frontend/pages/${req.params.page}`));
 });
 
-app.get('/quienesSomos.html', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/pages/quienesSomos.html'));
-});
+app.get('/config/testConnection', async (req, res) => {
+  try {
+    const connection = await oracledb.getConnection({
+      user: 'ADMIN',
+      password: '!PsTVqiybf_THL5',
+      connectionString: 'localhost/XE'
+    });
 
-app.get('/main.html', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/pages/main.html'));
-});
+    const result = await connection.execute('SELECT SYSDATE FROM dual');
+    await connection.close();
 
-app.get('/register.html', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/pages/register.html'));
-});
-
-app.get('/login.html', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/pages/login.html'));
-});
-
-app.get('/demandas.html', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/pages/demandas.html'));
-});
-
-app.get('/register.html', (req, res) => {
-    console.log("Petición a /register.html");
-    res.sendFile(path.join(__dirname, '../frontend/templates/register.html'));
-});
-
-app.get('/login.html', (req, res) => {
-    console.log("Petición a /login.html");
-    res.sendFile(path.join(__dirname, '../frontend/templates/login.html'));
+    res.json({
+      success: true,
+      message: `Conectado a la base de datos Oracle. Hora del sistema: ${result.rows[0][0]}`
+    });
+  } catch (err) {
+    console.error('Error de conexión a la base de datos:', err);
+    res.json({
+      success: false,
+      message: err.stack,
+    });
+  }
 });
 
 app.listen(PORT, () => {

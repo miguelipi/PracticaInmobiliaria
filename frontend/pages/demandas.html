@@ -5,11 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Eurozona.org - Demandas</title>
   <!-- Enlaza tu CSS externo -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../assets/css/demandas.css" />
+  <link rel="stylesheet" href="../assets/css/components/header.css">
+  <link rel="stylesheet" href="../assets/css/components/footer.css">
+  <link rel="stylesheet" href="../assets/css/components/general.css">
+  <link rel="stylesheet" href="../assets/css/components/botonFlotante.css">
 </head>
 <body>
-  
-  <main class="demands-page">
+
+  <header class="header">
+    <div class="title-container">
+      <a href="main.html"
+        ><img
+          src="../assets/images/eurozona.png"
+          alt="Logo de Eurozona"
+          class="logo"
+      /></a>
+      <h1 class="main-title">International Estate Market</h1>
+    </div>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="ofertas.html">Ofertas</a></li>
+      <li><a href="demandas.html">Demandas</a></li>
+      <li><a href="inmuebles.html">Inmuebles</a></li>
+      <li><a href="quienesSomos.html">Quienes Somos</a></li>
+      <li><a href="register.html">Registro</a></li>
+      <li><a href="login.html">Iniciar Sesion</a></li>
+      <li><a class="language-switcher"></a></li>
+    </ul>
+  </header>
     
     <!-- CONTENIDO IZQUIERDO: LISTADO DE DEMANDAS -->
     <section class="demands-content">
@@ -87,7 +111,32 @@
       </form>
     </aside>
 
-  </main>
+    <footer class="footer">
+      <p>
+        <i class="fas fa-phone" aria-hidden="true"></i> +34 666 997 997 |
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+        <a href="mailto:info@eurozona.org">info@eurozona.org</a>
+      </p>
+      <p>
+        <i class="fa fa-calendar-days" aria-hidden="true"></i> 2024/25
+        Eurozona.org ~ <a href="aviso-legal.html">⚖ Aviso Legal</a> |
+        <a href="politica-privacidad.html">🔒 Política de Privacidad</a> |
+        <a href="politica-cookies.html">
+          <i class="fas fa-cookie"></i> Política de Cookies</a
+        >
+        |
+        <a href="condiciones-uso.html"
+          ><i class="fas fa-scroll"></i> Condiciones de uso</a
+        >
+      </p>
+    </footer>
+
+    <!-- Botón de contacto flotante -->
+    <a href="mailto:info@eurozona.org" class="cta-float">¡Contáctanos!</a>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/menu.js"></script>
+    <script src="../assets/js/traduccion.js"></script>
 
 </body>
 </html>

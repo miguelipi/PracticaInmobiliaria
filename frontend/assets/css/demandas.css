@@ -1,180 +1,208 @@
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Estructura principal */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Estructura principal */
+.demands-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  gap: 20px; /* Espacio entre la sección de demandas y el formulario */
+  margin-top: 80px; /* Ajuste para evitar que se superponga con el encabezado fijo */
+}
+
+.page-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* SECCIÓN IZQUIERDA: DEMANDAS */
+.demands-content {
+  flex: 2;
+}
+
+/* Cada demanda individual */
+.demand {
+  background-color: #fff;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Agregar sombra sutil */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.demand:hover {
+  transform: translateY(-5px); /* Ligeramente levanta la tarjeta al hacer hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Más sombra al hacer hover */
+}
+
+.demand-id {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.demand-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.demand-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.demand-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Ligero aumento de tamaño al hacer hover */
+}
+
+/* SECCIÓN DERECHA: FORMULARIO */
+.form-content {
+  flex: 1;
+  background-color: #f9f9f9;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.form-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.form-content p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Formulario */
+.demand-form label {
+  display: block;
+  margin-bottom: 10px; /* Aumento de margen inferior */
+  font-weight: bold;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.demand-form input[type="text"],
+.demand-form input[type="email"],
+.demand-form input[type="tel"],
+.demand-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px; /* Aumento de espacio entre campos */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.demand-form .required {
+  color: #ff0000;
+}
+
+.policy-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Espaciado mayor entre campos */
+}
+
+.policy-check input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.policy-check a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.policy-check a:hover {
+  text-decoration: underline;
+}
+
+.submit-button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+  transform: scale(1.05); /* Ligero aumento de tamaño al hacer hover */
+}
+
+.note {
+  font-size: 0.85rem;
+  color: #999;
+  margin-top: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
   .demands-page {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-    gap: 20px; /* Espacio entre la sección de demandas y el formulario */
+      flex-direction: column;
   }
-  
-  .page-title {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  /* SECCIÓN IZQUIERDA: DEMANDAS */
-  .demands-content {
-    flex: 2;
-  }
-  
-  /* Cada demanda individual */
-  .demand {
-    background-color: #fff;
-    border: 1px solid #e1e1e1;
-    border-radius: 4px;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .demand-id {
-    font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .demand-text {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #555;
-    margin-bottom: 15px;
-  }
-  
-  .demand-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 16px;
-    cursor: pointer;
-    font-size: 0.95rem;
-  }
-  
-  .demand-button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* SECCIÓN DERECHA: FORMULARIO */
+
+  .demands-content,
   .form-content {
-    flex: 1;
-    background-color: #f9f9f9;
-    border: 1px solid #e1e1e1;
-    border-radius: 4px;
-    padding: 20px;
+      width: 100%;
+      margin: 0 0 20px 0;
   }
-  
-  .form-content h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #333;
+
+  .page-title {
+      font-size: 1.6rem; /* Ajuste del tamaño en pantallas pequeñas */
   }
-  
-  .form-content p {
-    font-size: 0.95rem;
-    color: #555;
-    margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+  .page-title {
+      font-size: 1.5rem;
+      text-align: center; /* Centrar el título en pantallas pequeñas */
   }
-  
-  /* Formulario */
+
+  .demand-id {
+      font-size: 1rem;
+  }
+
+  .demand-text,
+  .form-content p,
   .demand-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
-    font-size: 0.95rem;
+      font-size: 0.9rem; /* Ajuste en tamaño de texto */
   }
-  
+
   .demand-form input[type="text"],
   .demand-form input[type="email"],
   .demand-form input[type="tel"],
   .demand-form textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 0.95rem;
+      font-size: 1rem; /* Ajuste del tamaño de fuente */
   }
-  
-  .demand-form .required {
-    color: #ff0000;
+
+  .form-content {
+      padding: 15px; /* Ajuste del padding en el formulario */
   }
-  
-  .policy-check {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .policy-check input[type="checkbox"] {
-    margin-right: 10px;
-    cursor: pointer;
-  }
-  
-  .policy-check a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .policy-check a:hover {
-    text-decoration: underline;
-  }
-  
-  .submit-button {
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.95rem;
-  }
-  
-  .submit-button:hover {
-    background-color: #218838;
-  }
-  
-  .note {
-    font-size: 0.85rem;
-    color: #999;
-    margin-top: 10px;
-  }
-  
-  /* RESPONSIVE */
-  @media (max-width: 992px) {
-    .demands-page {
-      flex-direction: column;
-    }
-    
-    .demands-content,
-    .form-content {
-      width: 100%;
-      margin: 0 0 20px 0;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .page-title {
-      font-size: 1.5rem;
-    }
-    
-    .demand-id {
-      font-size: 1rem;
-    }
-    
-    .demand-text,
-    .form-content p,
-    .demand-form label {
-      font-size: 0.9rem;
-    }
-  }
+}

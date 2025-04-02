@@ -80,6 +80,9 @@
   color: red;
 }
 
-.fa {
+.fa-calendar-days,.fa-envelope {
   color: #0290da;
+}
+.fa-balance-scale,.fa-lock,.fa-cookie,.fa-scroll{
+  color:#a68d5c;
 }

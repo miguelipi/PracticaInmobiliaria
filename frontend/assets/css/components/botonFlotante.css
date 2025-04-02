@@ -1,17 +1,18 @@
 .cta-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #bfa06a;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease;
-  }
-  
-  .cta-float:hover {
-    background-color: #a68d5c;
-  }
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-float:hover {
+  background: #0056b3;
+  transform: scale(1.1);
+}

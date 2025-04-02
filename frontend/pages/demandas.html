@@ -5,89 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Eurozona.org - Demandas</title>
   <!-- Enlaza tu CSS externo -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../assets/css/demandas.css" />
+  <link rel="stylesheet" href="../assets/css/components/header.css">
+  <link rel="stylesheet" href="../assets/css/components/footer.css">
+  <link rel="stylesheet" href="../assets/css/components/general.css">
+  <link rel="stylesheet" href="../assets/css/components/botonFlotante.css">
 </head>
 <body>
-  
-  <main class="demands-page">
+
+  <header class="header">
+    <div class="title-container">
+      <a href="main.html"
+        ><img
+          src="../assets/images/eurozona.png"
+          alt="Logo de Eurozona"
+          class="logo"
+      /></a>
+      <h1 class="main-title">International Estate Market</h1>
+    </div>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="ofertas.html">Ofertas</a></li>
+      <li><a href="demandas.html">Demandas</a></li>
+      <li><a href="inmuebles.html">Inmuebles</a></li>
+      <li><a href="quienesSomos.html">Quienes Somos</a></li>
+      <li><a href="register.html">Registro</a></li>
+      <li><a href="login.html">Iniciar Sesion</a></li>
+      <li><a class="language-switcher"></a></li>
+    </ul>
+  </header>
     
-    <!-- CONTENIDO IZQUIERDO: LISTADO DE DEMANDAS -->
-    <section class="demands-content">
-      <h1 class="page-title">DEMANDAS</h1>
-
-      <!-- Demanda 1 -->
-      <article class="demand">
-        <h2 class="demand-id">2439 (A-325)</h2>
-        <p class="demand-text">
-          Firma dedicada a la compra de inmuebles para reforma está en búsqueda de inmuebles para adquirir 
-          que se encuentren en las siguientes condiciones: 1. Barcelona y sus alrededores. 2. Reparaciones en 
-          términos registrales y legales. 3. Que se puedan reformar o adaptar a uso residencial o mixto. 
-          4. No inferiores a 70 m2. 5. Pueden ser inmuebles separados, en conjunto o edificios sin límite de 
-          plantas.
-        </p>
-        <button class="demand-button">Responder</button>
-      </article>
-
-      <!-- Demanda 2 -->
-      <article class="demand">
-        <h2 class="demand-id">1987 (C-473)</h2>
-        <p class="demand-text">
-          Empresa interesada en inmuebles con alto potencial de reforma, situada en la zona centro de Madrid.
-          Buscan edificios completos con posibilidad de transformación en apartamentos turísticos o de alquiler 
-          residencial.
-        </p>
-        <button class="demand-button">Responder</button>
-      </article>
-
-      <!-- Demanda 3 -->
-      <article class="demand">
-        <h2 class="demand-id">3045 (B-612)</h2>
-        <p class="demand-text">
-          Inversor privado busca pisos en zonas costeras de la Comunidad Valenciana, 
-          con vistas al mar y con posibilidad de reforma para reventa o alquiler vacacional.
-        </p>
-        <button class="demand-button">Responder</button>
-      </article>
-
-      <!-- Agrega más demandas según tu necesidad -->
-    </section>
-
-    <!-- CONTENIDO DERECHO: FORMULARIO -->
-    <aside class="form-content">
-      <h2>Rellena el siguiente formulario</h2>
+    <footer class="footer">
       <p>
-        Indícanos cuál es tu demanda. El listado, tras su aprobación, 
-        aparecerá bajo un pseudónimo y podrás contactar con el inversor.
+        <i class="fas fa-phone" aria-hidden="true"></i> +34 666 997 997 |
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+        <a href="mailto:info@eurozona.org">info@eurozona.org</a>
       </p>
-      <form class="demand-form" action="#" method="post">
-        
-        <label for="nombre">Nombre <span class="required">( *)</span></label>
-        <input type="text" id="nombre" name="nombre" required />
+      <p>
+        <i class="fa fa-calendar-days" aria-hidden="true"></i> 2024/25
+        Eurozona.org ~ <a href="aviso-legal.html">⚖ Aviso Legal</a> |
+        <a href="politica-privacidad.html">🔒 Política de Privacidad</a> |
+        <a href="politica-cookies.html">
+          <i class="fas fa-cookie"></i> Política de Cookies</a
+        >
+        |
+        <a href="condiciones-uso.html"
+          ><i class="fas fa-scroll"></i> Condiciones de uso</a
+        >
+      </p>
+    </footer>
 
-        <label for="correo">Correo <span class="required">( *)</span></label>
-        <input type="email" id="correo" name="correo" required />
+    <!-- Botón de contacto flotante -->
+    <a href="mailto:info@eurozona.org" class="cta-float">¡Contáctanos!</a>
 
-        <label for="telefono">Teléfono</label>
-        <input type="tel" id="telefono" name="telefono" />
-
-        <label for="demanda">Demanda <span class="required">( *)</span></label>
-        <textarea id="demanda" name="demanda" rows="4" required></textarea>
-
-        <div class="policy-check">
-          <input type="checkbox" id="politica" name="politica" required />
-          <label for="politica">
-            Acepto la <a href="#" target="_blank" rel="noopener noreferrer">Política de Privacidad</a> de Eurozona.org.
-          </label>
-        </div>
-
-        <button type="submit" class="submit-button">Enviar</button>
-        <p class="note">
-          (*) Todos los campos son obligatorios
-        </p>
-      </form>
-    </aside>
-
-  </main>
+    <!-- JavaScript -->
+    <script src="../assets/js/menu.js"></script>
+    <script src="../assets/js/traduccion.js"></script>
 
 </body>
 </html>

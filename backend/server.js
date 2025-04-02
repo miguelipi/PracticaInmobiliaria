@@ -25,6 +25,10 @@ app.get('/login.html', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/pages/login.html'));
 });
 
+app.get('/demandas.html', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/pages/demandas.html'));
+});
+
 app.get('/register.html', (req, res) => {
     console.log("Petición a /register.html");
     res.sendFile(path.join(__dirname, '../frontend/templates/register.html'));

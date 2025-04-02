@@ -189,6 +189,7 @@
   border-radius: 8px;
   padding: 12px 20px;
   transition: background 0.3s ease;
+  cursor: pointer;
 }
 
 .servicios li:hover {

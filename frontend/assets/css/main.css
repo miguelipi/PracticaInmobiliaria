@@ -416,3 +416,8 @@
     text-align: center;
   }
 }
+
+.titles{
+  border-left: 3.5px solid #ff6600;
+  padding-left: 13px;
+}

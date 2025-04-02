@@ -25,6 +25,16 @@ app.get('/login.html', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/pages/login.html'));
 });
 
+app.get('/register.html', (req, res) => {
+    console.log("Petición a /register.html");
+    res.sendFile(path.join(__dirname, '../frontend/templates/register.html'));
+});
+
+app.get('/login.html', (req, res) => {
+    console.log("Petición a /login.html");
+    res.sendFile(path.join(__dirname, '../frontend/templates/login.html'));
+});
+
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });

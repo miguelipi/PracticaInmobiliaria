@@ -6,17 +6,23 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, '../frontend')));
 
 app.get('/', (req, res) => {
-    console.log("Petición a / (index.html)");
     res.sendFile(path.join(__dirname, '../index.html'));
 });
 
 app.get('/quienesSomos.html', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/templates/quienesSomos.html'));
+    res.sendFile(path.join(__dirname, '../frontend/pages/quienesSomos.html'));
 });
 
 app.get('/main.html', (req, res) => {
-    console.log("Petición a /main.html");
-    res.sendFile(path.join(__dirname, '../frontend/templates/main.html'));
+    res.sendFile(path.join(__dirname, '../frontend/pages/main.html'));
+});
+
+app.get('/register.html', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/pages/register.html'));
+});
+
+app.get('/login.html', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/pages/login.html'));
 });
 
 app.get('/register.html', (req, res) => {

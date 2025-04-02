@@ -330,21 +330,89 @@
     width: 90%;
   }
 
-  .testimonial, .faq-item, .blog article {
+  .testimonial,
+  .faq-item,
+  .blog article {
     width: 90%;
   }
 }
 
 @media (max-width: 480px) {
-  .faq-item, .testimonial, .blog article {
+  .faq-item,
+  .testimonial,
+  .blog article {
     width: 100%;
   }
 }
 
-.fa-phone{
+.fa-phone {
   color: red;
 }
 
-.fa{
-color: #0290da;
+.fa {
+  color: #0290da;
+}
+
+/* Contenedor principal de la sección */
+.intro-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.text-content {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.text-content h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.text-content h2 {
+  font-size: 1.5rem;
+  color: #ff6600;
+  margin-bottom: 1rem;
+}
+
+.text-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.image-content {
+  flex: 1;
+  text-align: right;
+}
+
+.image-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .intro-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-content,
+  .image-content {
+    margin: 0;
+  }
+
+  .image-content {
+    margin-top: 20px;
+    text-align: center;
+  }
 }

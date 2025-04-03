@@ -13,4 +13,13 @@
   .footer a:hover {
     color: #066ab8;
   }
+  .fa-phone {
+    color: red;
+  }
   
+  .fa-calendar-days,.fa-envelope {
+    color: #0290da;
+  }
+  .fa-balance-scale,.fa-lock,.fa-cookie,.fa-scroll{
+    color:#a68d5c;
+  }

@@ -77,13 +77,4 @@
 .cta-quienes a.btn-link:hover {
   color: #2c3e50;
 }
-.fa-phone {
-  color: red;
-}
 
-.fa-calendar-days,.fa-envelope {
-  color: #0290da;
-}
-.fa-balance-scale,.fa-lock,.fa-cookie,.fa-scroll{
-  color:#a68d5c;
-}

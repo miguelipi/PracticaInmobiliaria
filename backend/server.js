@@ -8,8 +8,12 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, '../frontend')));
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, '../index.html'));
+});
+
 app.get("/:page", (req, res) => {
-    res.sendFile(path.join(__dirname, `../frontend/pages/${req.params.page}`));
+  res.sendFile(path.join(__dirname, `../frontend/pages/${req.params.page}`));
 });
 
 app.get('/config/testConnection', async (req, res) => {
@@ -17,7 +21,8 @@ app.get('/config/testConnection', async (req, res) => {
     const connection = await oracledb.getConnection({
       user: 'ADMIN',
       password: '!PsTVqiybf_THL5',
-      connectionString: 'localhost/XE'
+      connectString: 'eurozona_high',
+      externalAuth: false
     });
 
     const result = await connection.execute('SELECT SYSDATE FROM dual');
@@ -37,5 +42,5 @@ app.get('/config/testConnection', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });

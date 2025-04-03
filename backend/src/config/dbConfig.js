@@ -1,7 +1,7 @@
 module.exports = {
     user: 'ADMIN',
     password: '!PsTVqiybf_THL5',
-    connectionString: 'localhost/XE'
+    connectionString: 'jdbc:oracle:thin:@eurozona_high?TNS_ADMIN=C:\Users\Carlos\Documents\wallet'
   };
   
   async function testConnection() {
